@@ -1,12 +1,48 @@
 :root {
-  --brand: #8c1d40;
-  --accent: #ffc627;
-  --ink: #191919;
+  --brand: #27354f;
+  --accent: #152139;
+  --focus: #ffe100;
+  --action: #3487da;
+  --border: #808080;
+  --ink: #dbdbdb;
   --paper: #fff;
-  --surface: #f4f4f4;
-  --focus: #0077b6;
-  --max: 72rem;
+  --surface: #0d192e;
+  --max: 70rem;
   --space: 1rem;
+  --space-2: 0.25rem;
+  --radius: 0.5rem;
+
+  /* FONT SYSTEM */
+  --font-body: "Inter", sans-serif;
+  --font-display: "Oxanium", sans-serif;
+  --size-base: 1rem;
+  --size-h1: 2.5rem;
+  --size-h2: 2rem;
+  --size-h3: 1.25rem;
+  --title: 1.5rem;
+  --size-caption: 0.75rem;
+  --line-height-body: 1.6;
+  --font-weight: 700;
+
+  /* SPACING AND SCALING */
+  --space-xxs: 0.15rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.85rem;
+  --space-mlg: 1.25rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+
+  /* SIZING & MEASURE */
+  --measure: 68ch;
+  --measure-max-width: 1200px;
+
+  /* BORDER RADIUS */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-mlg: 0.75rem;
+  --radius-lg: 1rem;
 }
 * {
   box-sizing: border-box;
@@ -42,7 +78,7 @@ footer {
 }
 .eyebrow,
 .specimen-number {
-  color: var(--brand);
+  color: var(--action);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -53,16 +89,42 @@ footer {
 }
 .specimen {
   padding: 1.25rem;
-  background: var(--paper);
-  border: 1px solid #ccc;
+  background: var(--brand);
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
 }
 .action {
   display: inline-block;
   padding: 0.75rem 1rem; /* TODO: default action surface. */
+  color: var(--action);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+  font-weight: var(--font-weight);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.action a {
+  color: var(--action);
+}
+.action:hover {
+  color: var(--ink);
+  background-color: var(--action);
 }
 .action::after {
   /* TODO: decorative pseudo-element with empty content. */
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 10px;
+  border-block-start: 0.18em solid currentColor;
+  border-inline-end: 0.18em solid currentColor;
+  transform: rotate(45deg);
+}
+.action:active {
+  color: var(--focus);
+  transform: scale(0.97);
 }
 /* TODO: action hover, focus-visible, and active states with explicit transitions. */
 .choices {
@@ -76,6 +138,14 @@ footer {
   gap: 0.75rem;
   align-items: start;
   margin-block: 0.75rem;
+  background-color: #000;
+  background-image: url("img/raiders01b.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: hidden;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.4rem;
 }
 .choice input {
   width: 1.25rem;
@@ -86,14 +156,57 @@ footer {
   display: grid;
   gap: 0.1rem;
   padding: 0.75rem;
-  border: 0.15rem solid #777;
+}
+.choice2 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  margin-block: 0.75rem;
+  background-color: #000;
+  background-image: url("img/raiders01b.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: hidden;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.4rem;
+}
+.choice2 input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+.choice2 label {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.75rem;
+}
+.choice3 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  margin-block: 0.75rem;
+}
+.choice3 input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+.choice3 label {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.75rem;
+  border: 0.0625rem solid var(--border);
   border-radius: 0.4rem;
 }
 .choice-title {
   font-weight: 700;
 }
 .choice-help {
-  color: #444;
+  color: var(--ink);
+  font-size: var(--size-caption);
 }
 /* TODO: visible input focus and persistent selected state that is not color-only. */
 summary {
