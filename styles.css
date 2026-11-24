@@ -224,12 +224,9 @@ summary {
   padding: 1rem;
 }
 /* TODO: apply at least three purposeful effects across the study. */
+
 /* TODO: create and trigger one short, finite keyframe animation. */
-/* TODO: add a tested reduced-motion strategy that preserves all feedback. */
-footer {
-  padding-block: 2rem;
-}
-/* Radio Player Animation -------------- */
+/*---RADIO PLAYER ANIMATION-------------- */
 .radio-wrapper {
   display: flex;
   flex-direction: column;
@@ -399,7 +396,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
     opacity: 0;
   }
 }
+/*---END RADIO PLAYER ANIMATION-------------*/
 
+footer {
+  padding-block: 2rem;
+}
+
+/* TODO: add a tested reduced-motion strategy that preserves all feedback. */
 @media (prefers-reduced-motion: reduce) {
   .animation-group:target .text-animation,
   .animation-group:target .circle {
