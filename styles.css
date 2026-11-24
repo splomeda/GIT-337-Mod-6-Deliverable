@@ -243,7 +243,7 @@ footer {
   width: 100%;
   height: 145px;
   margin-block: var(--space);
-  background: radial-gradient(circle, burlywood, #ab7937);
+  background: radial-gradient(circle, #f2f2f2, #27354f);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
@@ -257,8 +257,8 @@ footer {
   width: 100%;
   height: 71px;
   top: 0;
-  opacity: 0.5;
-  background: linear-gradient(to bottom, #fff, burlywood);
+  opacity: 0.2;
+  background: linear-gradient(to bottom, #fff, #dbdbdb);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -267,16 +267,13 @@ footer {
   position: relative;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, #f2f2f2, #969696);
+  background: radial-gradient(circle, #f2f2f2, #27354f);
   color: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   z-index: 20;
-  box-shadow:
-    inset 0 0 4px rgba(0, 0, 0, 0.5),
-    0 0 4px rgba(0, 0, 0, 0.5);
-  border: 8px solid #c4c4c4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 /* MDN - How to target an element:
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target */
@@ -295,7 +292,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #c4c4c4;
+  background-color: #91a0bc;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
 }
 .radio-display {
@@ -334,7 +331,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   height: 100px;
   top: 20px;
   right: 0;
-  background: radial-gradient(circle, #f2f2f2, #adadad);
+  background: radial-gradient(circle, #f2f2f2, #828d9f);
   margin-right: 20px;
   border-radius: 4px;
   justify-content: center;
@@ -346,7 +343,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   box-shadow:
     inset 0 0 4px rgba(0, 0, 0, 0.5),
     0 0 4px rgba(0, 0, 0, 0.5);
-  border: 8px solid #c4c4c4;
+  border: 8px solid #828d9f;
 }
 .controls a {
   display: flex;
