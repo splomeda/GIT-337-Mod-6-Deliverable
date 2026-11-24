@@ -97,12 +97,12 @@ footer {
   display: inline-block;
   padding: 0.75rem 1rem; /* TODO: default action surface. */
   color: var(--action);
-  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background-color: var(--surface);
   font-weight: var(--font-weight);
   text-decoration: none;
   transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .action a {
   color: var(--action);
@@ -139,13 +139,13 @@ footer {
   align-items: start;
   margin-block: 0.75rem;
   background-color: #000;
-  background-image: url("img/raiders01b.png");
+  background-image: url("img/las-vegas-raiders.png");
   background-size: 30%;
   background-repeat: no-repeat;
   background-position: right;
   overflow: hidden;
-  border: 0.0625rem solid var(--border);
   border-radius: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .choice input {
   width: 1.25rem;
@@ -163,14 +163,14 @@ footer {
   gap: 0.75rem;
   align-items: start;
   margin-block: 0.75rem;
-  background-color: #000;
-  background-image: url("img/raiders01b.png");
+  background-color: #004387;
+  background-image: url("img/seattle-seahawks.png");
   background-size: 30%;
   background-repeat: no-repeat;
   background-position: right;
   overflow: hidden;
-  border: 0.0625rem solid var(--border);
   border-radius: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .choice2 input {
   width: 1.25rem;
@@ -188,6 +188,14 @@ footer {
   gap: 0.75rem;
   align-items: start;
   margin-block: 0.75rem;
+  background-color: #b0925e;
+  background-image: url("img/santa-clara-niners.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .choice3 input {
   width: 1.25rem;
@@ -198,8 +206,6 @@ footer {
   display: grid;
   gap: 0.1rem;
   padding: 0.75rem;
-  border: 0.0625rem solid var(--border);
-  border-radius: 0.4rem;
 }
 .choice-title {
   font-weight: 700;
