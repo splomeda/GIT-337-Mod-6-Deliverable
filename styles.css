@@ -304,7 +304,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
     rgb(167, 176, 167)
   );
   top: 10px;
-  left: 148px;
+  left: 180px;
   width: 600px;
   height: 80px;
   padding: 10px;
@@ -329,7 +329,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   position: absolute;
   width: 200px;
   height: 100px;
-  top: 20px;
+  top: 22px;
   right: 0;
   background: radial-gradient(circle, #f2f2f2, #828d9f);
   margin-right: 20px;
@@ -400,6 +400,18 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animation-group:target .text-animation,
+  .animation-group:target .circle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .controls {
+    display: none;
+  }
+}
+
 @media (min-width: 48rem) {
   .specimen-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -451,5 +463,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
   }
   .gloss {
     width: 100%;
+  }
+  .circle {
+    background: radial-gradient(circle, #dbdbdb, #63708a);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 }
