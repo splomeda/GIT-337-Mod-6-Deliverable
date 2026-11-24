@@ -229,6 +229,180 @@ summary {
 footer {
   padding-block: 2rem;
 }
+/* Radio Player Animation -------------- */
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+.spec-bottom {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 145px;
+  margin-block: var(--space);
+  background: radial-gradient(circle, burlywood, #ab7937);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+.animation-group {
+  display: flex;
+  position: relative;
+  left: 20px;
+}
+.gloss {
+  position: absolute;
+  width: 100%;
+  height: 71px;
+  top: 0;
+  opacity: 0.5;
+  background: linear-gradient(to bottom, #fff, burlywood);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.circle {
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #f2f2f2, #969696);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 20;
+  box-shadow:
+    inset 0 0 4px rgba(0, 0, 0, 0.5),
+    0 0 4px rgba(0, 0, 0, 0.5);
+  border: 8px solid #c4c4c4;
+}
+/* MDN - How to target an element:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target */
+
+/* MDN - How to make an animation move forward and stay in place: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-fill-mode */
+.animation-group:target .circle {
+  animation: circle 0.8s ease-out forwards;
+}
+#reset:target .circle {
+  animation: circle-reverse 0.8s ease-out forwards;
+}
+.dot {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.radio-display {
+  display: flex;
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgb(124, 132, 124),
+    rgb(167, 176, 167)
+  );
+  top: 10px;
+  left: 148px;
+  width: 600px;
+  height: 80px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.text-animation {
+  color: #3b3b3b;
+  font-family: "Audiowide", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+.animation-group:target .text-animation {
+  animation: text-animation 0.8s ease forwards;
+}
+#reset:target .text-animation {
+  animation: text-animation-reverse 0.8s ease forwards;
+}
+.controls {
+  display: flex;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  top: 20px;
+  right: 0;
+  background: radial-gradient(circle, #f2f2f2, #adadad);
+  margin-right: 20px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ebc38f;
+  box-shadow:
+    inset 0 0 4px rgba(0, 0, 0, 0.5),
+    0 0 4px rgba(0, 0, 0, 0.5);
+  border: 8px solid #c4c4c4;
+}
+.controls a {
+  display: flex;
+  width: 60px;
+  height: 35px;
+  color: #242424;
+  font-size: 1rem;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff3de;
+  transition: 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+.controls a:active {
+  transform: scale(0.95);
+}
+.controls a:hover {
+  background-color: #00aaff;
+}
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    translate: 0 0;
+    transform: rotate(180deg);
+  }
+}
+@keyframes text-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes circle-reverse {
+  from {
+    translate: 0 0;
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes text-animation-reverse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 48rem) {
   .specimen-grid {
     grid-template-columns: repeat(2, 1fr);
