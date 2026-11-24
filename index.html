@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Microinteraction Study | [Student Name]</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to specimens</a>
+  <header class="study-header">
+    <p class="eyebrow">GIT 337 · Module 6</p>
+    <h1>Microinteraction Study</h1>
+    <p>[One sentence explaining the shared context for the study.]</p>
+  </header>
+  <main id="main" class="specimen-grid">
+    <section class="specimen" aria-labelledby="action-heading">
+      <p class="specimen-number">Specimen 01</p>
+      <h2 id="action-heading">Action Control</h2>
+      <p>[Describe what the user needs to accomplish.]</p>
+      <p><a class="action" href="#result">[Purposeful action label]</a></p>
+    </section>
+
+    <section class="specimen" aria-labelledby="selection-heading">
+      <p class="specimen-number">Specimen 02</p>
+      <h2 id="selection-heading">Selection and Status</h2>
+      <fieldset class="choices">
+        <legend>[Question or decision]</legend>
+        <div class="choice"><input type="radio" name="option" id="option-a"><label for="option-a"><span class="choice-title">[Option A]</span><span class="choice-help">[Useful explanation]</span></label></div>
+        <div class="choice"><input type="radio" name="option" id="option-b"><label for="option-b"><span class="choice-title">[Option B]</span><span class="choice-help">[Useful explanation]</span></label></div>
+      </fieldset>
+    </section>
+
+    <section class="specimen" aria-labelledby="confirmation-heading">
+      <p class="specimen-number">Specimen 03</p>
+      <h2 id="confirmation-heading">Disclosure and Confirmation</h2>
+      <details>
+        <summary>[Action or disclosure label]</summary>
+        <div class="confirmation" id="result"><strong>[Status message]</strong> [Next step or useful result.]</div>
+      </details>
+    </section>
+  </main>
+  <footer><p>Study by [Student Name].</p></footer>
+</body>
+</html>
