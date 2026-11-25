@@ -50,7 +50,10 @@
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--surface);
+  background-color: green;
+  background-image: url("img/gridiron-football02.png");
+  background-repeat: no-repeat;
+  background-position: top center;
   font:
     1rem/1.5 Arial,
     sans-serif;
@@ -89,9 +92,11 @@ footer {
 }
 .specimen {
   padding: 1.25rem;
-  background: var(--brand);
-  border: 1px solid var(--border);
+  /*--GRADIENT--*/
+  background: linear-gradient(to bottom, #075693, #076da9);
+  /* border: 1px solid var(--border); */
   border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 .action {
   display: inline-block;
@@ -108,8 +113,8 @@ footer {
   color: var(--action);
 }
 .action:hover {
-  color: var(--ink);
-  background-color: var(--action);
+  color: var(--accent);
+  background-color: var(--focus);
 }
 .action::after {
   /* TODO: decorative pseudo-element with empty content. */
@@ -123,7 +128,6 @@ footer {
   transform: rotate(45deg);
 }
 .action:active {
-  color: var(--focus);
   transform: scale(0.97);
 }
 /* TODO: action hover, focus-visible, and active states with explicit transitions. */
