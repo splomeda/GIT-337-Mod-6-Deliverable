@@ -31,13 +31,17 @@
         background: #8c1d40;
         color: #fff;
       }
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
     <h1>Microinteraction Study Notes</h1>
     <p>
-      <strong>Student:</strong> [Name] &nbsp;
-      <strong>Study context:</strong> [Context]
+      <strong>Student:</strong> Steven Plomedahl &nbsp;
+      <strong>Study context:</strong> Football survey
     </p>
     <h2>1. Purpose and semantic baseline</h2>
     <table>
@@ -49,21 +53,40 @@
       </tr>
       <tr>
         <td>Action</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>Alert to read and agree to the terms and conditions statement.</td>
+        <td>Anchor element styled as a button.</td>
+        <td>A link that says "Open Terms".</td>
       </tr>
       <tr>
         <td>Selection/status</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          1. User chooses their favorite from a list of options.<br />
+          2. A button-styled link to submit vote.
+        </td>
+        <td>
+          1. <code>input type="radio"</code> as there are 3 options and the user
+          has to select one of them.<br />
+          2. Anchor element styled as a button.
+        </td>
+        <td>
+          1. Without CSS all three options are still visible and selectable.<br />
+          2. Link that says "Vote" directly underneath voting options.
+        </td>
       </tr>
       <tr>
         <td>Disclosure/confirmation</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          Section for user to agree to terms and conditions statement to
+          proceed.
+        </td>
+        <td>
+          <code>input type="checkbox"</code> for user to agree to terms and
+          conditions statement.
+        </td>
+        <td>
+          Without CSS a checkbox remains with a statement next to it that reads
+          "Terms of service check the box to continue"
+        </td>
       </tr>
     </table>
     <h2>2. State map</h2>
@@ -76,39 +99,101 @@
       </tr>
       <tr>
         <td>Default</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/open-button-default.png"
+            alt="screenshot of open button in default mode"
+            width="164"
+          />
+        </td>
+        <td>
+          High contrast background with arrow and the statement "Open Terms".
+        </td>
+        <td>It has an arrow and the statement "Open Terms".</td>
       </tr>
       <tr>
         <td>Hover</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/open-button-hover.png"
+            alt="screenshot of open button in hover state"
+            width="166"
+          />
+        </td>
+        <td>Background color changes to bright yellow, high contrast.</td>
+        <td>
+          Drop shadow gets darker and more apparent and button still says "Open
+          Terms".
+        </td>
       </tr>
       <tr>
         <td>Focus-visible</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/open-button-focus-visible.png"
+            alt="screenshot of open button in focus visible state"
+            width="166"
+          />
+        </td>
+        <td>White, high-contrast border.</td>
+        <td>
+          Button still says "Open Terms" even when tabbed to with keyboard.
+        </td>
       </tr>
       <tr>
         <td>Active</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/open-button-active.png"
+            alt="screenshot of open button in active state"
+            width="172"
+          />
+        </td>
+        <td>
+          Using <code>transform</code>, when clicked/pressed the button shrinks
+          simulating a down-pressed effect.
+        </td>
+        <td>
+          When clicked/tapped/pressed the button simulates a down-pressed effect
+          by shrinking in size.
+        </td>
       </tr>
       <tr>
         <td>Selected/checked</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/terms-checked.png"
+            alt="screenshot of terms checkbox selected"
+            width="274"
+          />
+        </td>
+        <td>
+          When checkec the checkbox has a white arrow with a blue background and
+          the corresponding label has its opacity reduced.
+        </td>
+        <td>
+          When checked the checkbox has a checkmark and the opacity of the
+          corresponding label is reduced.
+        </td>
       </tr>
       <tr>
         <td>Open and status/result</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <img
+            src="img/terms-open.png"
+            alt="screenshot of disclosure terms and conditions statement open"
+            width="300"
+          />
+        </td>
+        <td>
+          When disclosure is closed, arrow is pointing to the right. When
+          disclosure is open, arrow is pointing down and previously hidden
+          content is now visible.
+        </td>
+        <td>
+          It doesn't use color to show a status change; the arrrow points down
+          and previously hidden content is now visible.
+        </td>
       </tr>
     </table>
     <h2>3. Effects inventory</h2>
@@ -120,38 +205,155 @@
         <th>MDN source</th>
       </tr>
       <tr>
-        <td>Pseudo-element</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[URL]</td>
+        <td>
+          <h3>Pseudo-element</h3>
+          <u>Arrow</u><br />
+          <strong><code>.action::after</code></strong
+          ><br />
+          <code>border-block-start: 0.18em solid currentColor;</code><br />
+          <code>border-inline-end: 0.18em solid currentColor;</code><br />
+          <code>transform: rotate(45deg);</code>
+        </td>
+        <td>
+          Arrow points to the right indicating action; by clicking button the
+          user will be directed to another part of the page or another page
+          entirely.
+        </td>
+        <td>
+          With CSS disabled the pseudo-element is not visible but the link "Open
+          Terms" is visible and clickable.
+        </td>
+        <td>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements#what_is_a_pseudo-element"
+            target="_blank"
+            >MDN Link 1</a
+          ><br />
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transforms/Using#rotating"
+            target="_blank"
+            >MDN Link 2</a
+          >
+        </td>
       </tr>
       <tr>
-        <td>Effect 1</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[URL]</td>
+        <td>
+          <h3>Effect 1</h3>
+          <u>Transform: scale</u><br />
+          "Open Terms" button appears to be pushed down when clicked/tapped.<br />
+          <strong><code>.action:active</code></strong
+          ><br />
+          <code>transform: scale(0.97);</code>
+        </td>
+        <td>
+          It communicates to the user that it is an action element; that
+          clicking the button makes things happen.
+        </td>
+        <td>
+          With CSS disabled the button is not visible but its anchor/link
+          element is visible and clickable.
+        </td>
+        <td>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transforms/Using#css_transforms_properties"
+            target="_blank"
+            >MDN Link 1</a
+          >
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scale"
+            target="_blank"
+            >MDN Link 2</a
+          >
+          <br />
+        </td>
       </tr>
       <tr>
-        <td>Effect 2</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[URL]</td>
+        <td>
+          <h3>Effect 2</h3>
+          <u>Box shadow</u><br />
+          <strong><code>.specimen</code></strong
+          ><br />
+          <code>box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);</code>
+        </td>
+        <td>
+          It's visually pleasing and communicates to the user professionalism
+          and care was taken in creating this web page.
+        </td>
+        <td>
+          Not visible with CSS disable and not needed for the site to function
+          and push its message.
+        </td>
+        <td>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Advanced_styling_effects#box_shadows"
+            >MDN Link</a
+          >
+        </td>
       </tr>
       <tr>
-        <td>Effect 3</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
-        <td>[URL]</td>
+        <td>
+          <h3>Effect 3</h3>
+          <u>Linear background gradient</u><br />
+          <strong><code>.radio-display</code></strong
+          ><br />
+          <code
+            >background: linear-gradient( to bottom, rgb(124, 132, 124),
+            rgb(167, 176, 167) );</code
+          >
+        </td>
+        <td>
+          There are several linear and radial gradients throughout the page that
+          signal high-quality and professionalism to the user.
+        </td>
+        <td>
+          Not visible when CSS is disabled and not required for site message or
+          functionality.
+        </td>
+        <td>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients#using_linear_gradients"
+            target="_blank"
+            >MDN Link 1</a
+          >
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients#using_radial_gradients"
+            target="_blank"
+            >MDN Link 2</a
+          >
+        </td>
       </tr>
     </table>
     <h2>4. Motion and CSS explanation</h2>
     <p>
-      <strong>Transition 1:</strong> [Selector, trigger, explicit properties,
-      duration/easing, and purpose]
+      <strong>Transition 1:</strong>
     </p>
     <p>
-      <strong>Transition 2:</strong> [Selector, trigger, explicit properties,
-      duration/easing, and purpose]
+      Selector: <code>.controls a</code><br />
+      trigger: hover over the anchor element<br />
+      Explicit properties:<br />
+      <img
+        src="img/transition01-explicit-props.png"
+        alt="screenshot of explicit properties of a transition effect"
+        width="300"
+      /><br />
+      Duration/easing: 0.3s<br />
+      Purpose: It gives the button a nice, comfortable feel on mouseover.
+    </p>
+    <p>
+      <strong>Transition 2:</strong>
+    </p>
+    <p>
+      Selector: <code>.action</code><br />
+      Trigger: hover on anchor element<br />
+      Explicit Properties:<br />
+      <img
+        src="img/transition02-explicit-props.png"
+        alt="screenshot of explicit properties of a transition effect"
+        width="300"
+      /><br />
+
+      Duration/easing: 0.3s Purpose: Offers a comfortable feel to the button on
+      mouseover.
     </p>
     <p>
       <strong>Keyframe animation:</strong> [Name, waypoints, trigger, iteration
