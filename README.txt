@@ -1,5 +1,26 @@
 MODULE 6 MICROINTERACTION STUDY STARTER
 
+GIT 337
+
+Authored by Steven Plomedahl
+
+This is a one-page website for a football survey.
+
+This website uses HTML and CSS. It contains no JavaScript.
+The HTML is semantic and validated.
+
+Github repository: https://github.com/splomeda/GIT-337-Mod-6-Deliverable
+
+Published site: https://splomeda.github.io/GIT-337-Mod-6-Deliverable/
+
+Sourced images:
+
+Close-up of an American football resting on vibrant green turf in daylight, perfect for sports themes.
+Mukhtar Shuaib Mukhtar. https://www.pexels.com/photo/american-football-on-vibrant-green-turf-39676596/
+
+AI disclosure:
+
+
 Required files:
 - index.html: responsive three-specimen study scaffold
 - styles.css: shared tokens, layout foundations, and TODO markers

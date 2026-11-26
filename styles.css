@@ -307,6 +307,9 @@ summary {
   color: var(--accent);
   background-color: var(--focus);
 }
+.vote:active {
+  transform: scale(0.97);
+}
 /* TODO: apply at least three purposeful effects across the study. */
 
 /* TODO: create and trigger one short, finite keyframe animation. */
