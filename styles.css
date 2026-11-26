@@ -100,6 +100,8 @@ footer {
 }
 .action {
   display: inline-block;
+  width: 150px;
+  height: 48px;
   padding: 0.75rem 1rem; /* TODO: default action surface. */
   color: var(--action);
   border-radius: var(--radius-md);
@@ -129,6 +131,16 @@ footer {
 }
 .action:active {
   transform: scale(0.97);
+}
+.football {
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+  background: url("img/football-on-grass.png");
+  background-color: green;
+}
+.multiply {
+  background-blend-mode: multiply;
 }
 /* TODO: action hover, focus-visible, and active states with explicit transitions. */
 .choices {
@@ -226,6 +238,74 @@ summary {
 .confirmation {
   margin-top: 0.75rem;
   padding: 1rem;
+}
+.agree {
+  display: flex;
+  height: auto;
+}
+.terms {
+  display: flex;
+}
+.terms input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+.terms label {
+  display: grid;
+  gap: 0.1rem;
+  margin-left: var(--space-md);
+  padding: var(--space-md);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-md);
+}
+.terms-title {
+  font-weight: 700;
+}
+.terms-help {
+  color: inherit;
+}
+.terms input:checked + label {
+  color: var(--border);
+  color: var(--action);
+  background-color: var(--ink);
+  opacity: 0.5;
+  transform: translateX(-5px);
+}
+.vote-btn-wrap {
+  display: flex;
+  width: 55%;
+  height: auto;
+  align-items: center;
+}
+.vote {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.vote-btn {
+  display: flex;
+  width: 150px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem; /* TODO: default action surface. */
+  color: var(--action);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+  font-weight: var(--font-weight);
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+.vote-btn a {
+  color: var(--action);
+}
+.vote-btn:hover {
+  color: var(--accent);
+  background-color: var(--focus);
 }
 /* TODO: apply at least three purposeful effects across the study. */
 
