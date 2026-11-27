@@ -277,7 +277,7 @@
         </td>
         <td>
           It's visually pleasing and communicates to the user professionalism
-          and care was taken in creating this web page.
+          and care was taken in creating this webpage.
         </td>
         <td>
           Not visible with CSS disable and not needed for the site to function
@@ -390,41 +390,108 @@
           All links, buttons, and input elements are focusable with the keyboard
           and function properly when the enter key or the spacebar is used.
         </td>
-        <td>No repair needed</td>
+        <td>No repair needed.</td>
       </tr>
       <tr>
         <td>Pointer and no hover-only information</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          All buttons and inputs/checkboxes are clearly labeled. Button to open
+          disclosure to view terms & conditions is labeled "Open Terms", button
+          to submit vote is labeled "Vote", and the legend for the fieldset that
+          contains the selections reads "Which football team is your favorite?"
+          with the selections themselves being clearly marked. The on and off
+          buttons for the radio player animation are clearly labeled "ON" and
+          "OFF". No hovering with the mouse is required for any of these
+          elements.
+        </td>
+        <td>No repair needed.</td>
       </tr>
       <tr>
         <td>Reduced motion</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          With animations disabled the display of the radio animation reads
+          "WELCOME &bull; Football Live Player" alerting the user that the radio
+          would play (if it was a fully functioning audio player) football
+          related audio content.
+        </td>
+        <td>No repair needed.</td>
       </tr>
       <tr>
         <td>Narrow width and 200% zoom</td>
         <td>
-          At 320px, 768px, 1280px and 200% zoom there is no crowding or overflow
-          and the site functions as intended.
+          At 320px, 768px, 1280px there is no crowding or overflow and the site
+          functions as intended. Except at 200% zoom the
+          <code>.radio-display</code> element on the animation is partially
+          hidden by the <code>.controls</code> element. Edit: after further
+          review, I noticed that the text in the selection elements to choose a
+          football team was too crowded and flowing over the bacground images.
         </td>
-        <td>No repair needed</td>
+        <td>
+          Fix 1: added a media query @ 1000px width that reduces the width of
+          <code>.radio-display</code> to 450px wide and reduces the font-size to
+          16px or 1rem.<br />
+          Fix 2: in the media query for small screens, I reduced the width of
+          <code>.choice-help</code> to <code>70%</code> and reduced the
+          <code>font-size</code> in the <code>.choice-title</code> element to
+          <code>0.9rem</code>.
+        </td>
       </tr>
       <tr>
         <td>Effects/CSS unavailable</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          With CSS disabled all content, links, and headings are displayed in a
+          logical order from top to bottom and the site functions as intended.
+          CSS effects are not required for the site to function.
+        </td>
+        <td>No repair needed.</td>
       </tr>
       <tr>
         <td>Performance recording</td>
-        <td>[Response]</td>
-        <td>[Response]</td>
+        <td>
+          <ul>
+            <li>Largest contentful paint (LCP) is "good" at 0.46s</li>
+            <li>Cumulative layout shift (CLS) is rated "good" at 0.00</li>
+            <li>Interaction to next paint (INP) is rated "good" at 0 ms</li>
+          </ul>
+          <p>
+            I did a recording/test where I scrolled the page, click on every
+            button and selection/input and activated the animation. Results of
+            the test were good - "Passed insights (18/18)"
+          </p>
+        </td>
+        <td>No repairs needed.</td>
       </tr>
     </table>
     <p>
-      <strong>Screenshot filenames and what each proves:</strong> [Response]
+      <strong>Screenshot filenames and what each proves:</strong>
     </p>
-    <p><strong>Repair and retest summary:</strong> [Response]</p>
+    <ol>
+      <li>
+        <code>performance-recording.png</code> is a snapshot of the performance
+        test ran in Google Chrome dev tools and shows that the webpage passed
+        the tests (insights).
+      </li>
+      <li>
+        <code>320px01.png</code>, <code>320px02.png</code>, and
+        <code>320px03.png</code> show that webpage fits with no crowding or
+        overflows at narrow width 320 pixels.
+      </li>
+      <li>
+        <code>200z01.png</code>, <code>200z02.png</code>,
+        <code>200z03.png</code> show that the webpage fits and functions at
+        different viewport widths.
+      </li>
+    </ol>
+    <p>
+      <strong>Repair and retest summary:</strong> One repair that was needed was
+      to fix the <code>.radio-display</code> element from being partially hidden
+      by the <code>.controls</code> element with the browser window at 200%
+      zoom. To do this I added a media query that specifies at 1000px width the
+      <code>.radio-display</code> element's <code>max-width</code> should be
+      450px and the <code>font-size</code> should be 1rem. Changing the
+      <code>max-width</code> fixed the issue, as evidenced by the
+      <code>200z03.png</code> screenshot.
+    </p>
     <h2>6. AI disclosure</h2>
     <p><strong>Tool and purpose, or none:</strong> None</p>
     <p><strong>Prompt/task:</strong> None</p>

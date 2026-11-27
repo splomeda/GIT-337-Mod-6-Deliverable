@@ -511,7 +511,22 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  .radio-display {
+    max-width: 450px;
+  }
+  .text-animation {
+    font-size: var(--size-base);
+  }
+}
+
+@media (max-width: 48rem) {
+  .choice-title {
+    font-size: 0.9rem;
+  }
+  .choice-help {
+    max-width: 70%;
+  }
   .animation-group {
     left: 0;
     position: relative;
