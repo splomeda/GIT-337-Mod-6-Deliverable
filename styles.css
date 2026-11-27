@@ -318,7 +318,6 @@ summary {
 }
 /* TODO: apply at least three purposeful effects across the study. */
 
-/* TODO: create and trigger one short, finite keyframe animation. */
 /*---RADIO PLAYER ANIMATION-------------- */
 .radio-wrapper {
   display: flex;
@@ -455,6 +454,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
 .controls a:hover {
   background-color: #00aaff;
 }
+/* TODO: create and trigger one short, finite keyframe animation. */
 @keyframes circle {
   from {
     transform: rotate(0deg);
