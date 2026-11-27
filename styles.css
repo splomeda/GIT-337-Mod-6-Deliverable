@@ -101,7 +101,7 @@ footer {
 }
 .action {
   display: inline-block;
-  width: 150px;
+  width: 160px;
   height: 48px;
   padding: 0.75rem 1rem; /* TODO: default action surface. */
   color: var(--action);
@@ -145,6 +145,9 @@ footer {
   background-blend-mode: multiply;
 }
 /* TODO: action hover, focus-visible, and active states with explicit transitions. */
+:focus-visible {
+  border: 3px solid yellow;
+}
 .choices {
   margin: 0;
   padding: 0;
@@ -487,7 +490,28 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
 /*---END RADIO PLAYER ANIMATION-------------*/
 
 footer {
+  display: flex;
+  flex-direction: row;
   padding-block: var(--space-xl);
+}
+.footer-left {
+  display: flex;
+  width: 50%;
+  height: auto;
+}
+.footer-right {
+  display: flex;
+  width: 50%;
+  height: auto;
+  align-items: center;
+  justify-content: right;
+}
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-right a:hover {
+  text-decoration: underline;
 }
 
 /* TODO: add a tested reduced-motion strategy that preserves all feedback. */
