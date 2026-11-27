@@ -456,7 +456,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
     transform: rotate(0deg);
   }
   to {
-    translate: 0 0;
     transform: rotate(180deg);
   }
 }
@@ -470,7 +469,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-
 }
 @keyframes circle-reverse {
   from {
-    translate: 0 0;
     transform: rotate(180deg);
   }
   to {
